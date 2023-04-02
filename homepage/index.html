@@ -52,7 +52,7 @@
                     </div>
                     <hr>
 
-                    <div class="h-100  ">
+                    <div class="  ">
                         <div class="row ">
                             <div class="d-flex justify-content-between">
                                 <h5>Win Rate</h5>
@@ -103,65 +103,242 @@
                     </div>
 
                 </div>
-                <div class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block"
+                <div class="p-4 justify-content-center logged-in profile col-12 mt-2 d-inline-block"
                     style=" height: auto;">
 
-                    <div class="d-flex justify-content-center">
-                        <p class="fs-3 fw-bold">1</p>
-                        <p class="fs-3 fw-bold">2</p>
-                        <p class="fs-3 fw-bold">3</p>
+                    <div class="row">
+                        <div class="d-flex justify-content-center">
+                            <h1 id="win_rate"> Top 3 Player </h1>
+
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="d-flex justify-content-between pt-5">
+                            <h5 id="win_rate"> player1 </h5>
+                            <h5 id="win_rate"> player2 </h5>
+                            <h5 id="win_rate"> player3 </h5>
+                        </div>
                     </div>
 
                 </div>
-                <div class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block menubtn"
+                <a href="leaderboard.html"
+                    class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block menubtn"
                     style=" height: auto;">
 
-                    <div class="d-flex justify-content-center fs-1 " onclick="toChooseMode()">
+                    <div class="d-flex justify-content-center fs-1 ">
                         Leaderboard
                     </div>
-                </div>
-                <div class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block menubtn"
+                </a>
+                <a href=".html" class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block menubtn"
                     style=" height: auto;">
-                    <div class="d-flex justify-content-center fs-1 " onclick="toChooseMode()">
+                    <div class="d-flex justify-content-center fs-1 ">
                         Start
                     </div>
 
-                </div>
+                </a>
                 <div class="row profile mt-2 mx-lg-2 d-md-none">
-                    <button class="glow-on-hover fs-1 fw-bold" type="button">LOGOUT</button>
+                    <button class="glow-on-hover fs-1 fw-bold" type="button" onclick="">LOGOUT</button>
                 </div>
             </div>
-            <div class="row d-flex justify-content-end">
-                <div class="col-lg-1 col-sm-2 col-3 d-md-block d-none">
-                    <div class="btn bg-warning btn-lg" id="logout_btn">
-                        Logout
-                    </div>
+
+        </div>
+
+
+        <div class="row d-flex justify-content-end">
+            <div class="col-lg-1 col-sm-2 col-3 d-md-block d-none">
+                <div id="mybutton">
+                    <button class="feedback" type="button" onclick="">LOGOUT</button>
                 </div>
             </div>
         </div>
 
 
-
-
     </div>
     <div class="container">
         <div id="mySidebar" class="sidebar" style="">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-         </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div class="tab  d-flex justify-content-center">
+                <button class="tablinks" onclick="openCity(event, 'friend_list')" id="defaultOpen">Friend List</button>
+                <button class="tablinks" onclick="openCity(event, 'Add/Request')">Add/Request</button>
 
-         <div id="main" class="position-absolute " style="bottom: 50%;padding:0;right: 0%;">
-        <button class="openbtn rounded-start" onclick="openNav()" style="width: auto;height: 100px;">
-            <span><i class="bi bi-people-fill"></i>
-            </span>
-        </button>
+            </div>
 
-         </div>
+
+            <!-- friendlist -->
+            <div class="d-felx">
+                <div id="friend_list" class="tabcontent">
+                    <div class="container p-3 pt-4">
+                        <div class="row">
+                            <div class="d-flex justify-content-start col ">
+                                <h3>Friend List</h3>
+                            </div>
+                            <div class="d-flex col justify-content-end">
+                                <h3 id="friend_num">1</h3>
+                                <h3>/20</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Addname here -->
+                    <div class="container bg-warning friendblock" id="friendblock">
+                        <div class="row">
+                            
+                            <div class="col-4 d-flex justify-content-center" id="friend_pic">
+                                Picture
+                            </div>
+                            <div class="col-6">
+                                <div class="row fs-4" id="friend_name">
+                                    Friendname
+                                </div>
+                                <div class="row fs-4" id="state">
+                                    Online
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container bg-warning friendblock" id="friendblock">
+                        <div class="row">
+                            
+                            <div class="col-4 d-flex justify-content-center" id="friend_pic">
+                                Picture
+                            </div>
+                            <div class="col-6">
+                                <div class="row fs-4" id="friend_name">
+                                    Friendname
+                                </div>
+                                <div class="row fs-4" id="state">
+                                    Online
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+
+                
+                
+
+            </div>
+
+
+            <div id="Add/Request" class="tabcontent">
+                <div class="container p-3 pt-4">
+                    <div class="row">
+                        <div class="d-flex justify-content-start col ">
+                            <h3>Add/Request</h3>
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search player name">
+                                <div class="input-group-append">
+                                  <button class="btn btn-secondary" type="button">
+                                    <span class="bi bi-search"></span>
+                                  </button>
+                                </div>
+                              </div>
+                              <div class="container bg-warning requestblock" id="requestblock">
+                                <div class="row">
+                                    <div class="col-4 d-flex justify-content-center" id="friend_pic">
+                                        Picture
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row fs-4" id="friend_name">
+                                            Friendname
+                                        </div>
+                                        <div class="row fs-4 mt-2" >
+                                            <div class="btn btn-success col-5 mx-1"id="addbtn">
+                                                Add
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                              <hr>
+                              <!-- Friend Request -->
+                              <div class="container p-3 pt-4">
+                                <div class="row">
+                                    <div class="d-flex justify-content-start col-8 ">
+                                        <h3>Friend Request</h3>
+                                    </div>
+                                    <div class="d-flex col justify-content-start">
+                                        <h3 id="request_num">1</h3>
+                                        <h3>/20</h3>
+                                    </div>
+                                </div>
+        
+                                </div>
+                                
+                            
+                            <!-- Add Request here -->
+                            <div class="container bg-warning requestblock" id="requestblock">
+                                <div class="row">
+                                    <div class="col-4 d-flex justify-content-center" id="friend_pic">
+                                        Picture
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row fs-4" id="friend_name">
+                                            Friendname
+                                        </div>
+                                        <div class="row fs-4 mt-2" >
+                                            <div class="btn btn-success col-5 mx-1"id="acceptbtn">
+                                                Accept
+                                            </div>
+                                            <div class="btn btn-danger col-5 mx-1"id="rejectbtn">
+                                                Reject
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container bg-warning requestblock" id="requestblock">
+                                <div class="row">
+                                    <div class="col-4 d-flex justify-content-center" id="friend_pic">
+                                        Picture
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row fs-4" id="friend_name">
+                                            Friendname
+                                        </div>
+                                        <div class="row fs-4 mt-2" >
+                                            <div class="btn btn-success col-5 mx-1"id="acceptbtn">
+                                                Accept
+                                            </div>
+                                            <div class="btn btn-danger col-5 mx-1"id="rejectbtn">
+                                                Reject
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+                
+            </div>
+
+
+        </div>
+
+        <div id="main" class="position-absolute " style="bottom: 50%;padding:0;right: 0%;">
+            <button class="openbtn rounded-start" onclick="openNav()" style="width: auto;height: 100px;">
+                <span><i class="bi bi-people-fill"></i>
+                </span>
+            </button>
+
+        </div>
     </div>
-    
+
 
 
 </body>
@@ -190,6 +367,22 @@
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginRight = "0";
     }
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
 </script>
 
 
