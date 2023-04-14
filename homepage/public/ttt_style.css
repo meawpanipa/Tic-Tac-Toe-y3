@@ -1,0 +1,50 @@
+html,body{
+    height: calc(100% - 1px);
+    font-family: 'Crimson Text', serif;
+    font-family: 'Trirong', serif;
+
+  }
+ 
+  
+  .table-block{
+    width: 8vw;
+    height: 8vw;
+    color: rgb(0, 0, 0);
+    font-size: 125px;
+    font-weight: bold;
+    line-height: 50px;
+    border: solid 3px rgb(0, 0, 0);
+    text-align: center;
+    
+  }
+  .ttt-block{
+    
+
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0%;
+
+  }
+  .user-block{
+  
+    background-color: rgb(44, 44, 44);
+    border-radius:0px 0px 20px 20px;
+  }
+  .user-block-btm{
+    background-color: rgb(44, 44, 44);
+    border-radius:20px 20px 0px 0px ;
+  }
+  .timer{
+    background-color: rgb(216, 71, 119);
+    border-radius:20px ;
+    width: 200px;
+  }
+  .specialfx{
+    background-color: rgb(41, 41, 41);
+    border-radius:20px ;
+    width: 100px;
+    height: 100px;
+    top: 0%;
+    margin: 1%;
+  }
