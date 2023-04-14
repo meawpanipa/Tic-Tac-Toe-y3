@@ -1,10 +1,10 @@
 
-
+const c_user = localStorage.getItem("current-user");
 let readList = () => {
     var ref = firebase.database().ref("users");
     ref.once("value").then((snapshot) => {
         snapshot.forEach((data) => {
-            var id = data.key;
+            var id = c_user;
             ref.once("value").then((snapshot) => {
                 let username = snapshot.child(id).child("username").val();
                 let winNum = snapshot.child(id).child("winRound").val();
@@ -25,3 +25,7 @@ let readList = () => {
 }
 
 window.onload = readList;
+function sendUserToAnotherFile(user) {
+    // Do something with the user object, such as sending it to an API or updating the UI
+    console.log(user);
+  }

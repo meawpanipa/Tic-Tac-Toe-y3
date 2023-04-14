@@ -14,7 +14,7 @@ function loginUser(event){
 
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
-        const user = firebase.auth().currentUser;
+        const user = firebase.auth().currentUser.uid;
         var database_ref = firebase.database().ref();
         loginFeedback.style = "color: green";
         loginFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> Login success!.";
@@ -38,12 +38,17 @@ firebase.auth().onAuthStateChanged((user) => {
     if(user){
         console.log("User :", user);
         getList(user);
-    } 
+        sendUserToAnotherFile(user);
+    } else {
+        // User is signed out
+        sendUserToAnotherFile(null);
+      }
 });
 
 const btnLogout = document.querySelector("#btnLogout");
 btnLogout.addEventListener("click", function(){
     firebase.auth().signOut();
     console.log("Logout completed.");
-    localStorage.removeItem("current-user");
+
+    localStorage.removeItem("current_user");
 })
