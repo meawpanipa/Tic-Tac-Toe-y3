@@ -13,6 +13,10 @@ let readList = () => {
         const td2 = document.createElement("td");
         const td3 = document.createElement("td");
 
+        const H = document.createElement("h4");
+        const H2 = document.createElement("h4");
+        const H3 = document.createElement("h4");
+
         const div = document.createElement("div");
         const div2 = document.createElement("div");
         const div3 = document.createElement("div");
@@ -37,33 +41,19 @@ let readList = () => {
         div3.classList.add("d-flex");
         div3.classList.add("justify-content-center");
 
-        td.appendChild(div).appendChild(newUname);
-        td2.appendChild(div2).appendChild(newScore);
-        td3.appendChild(div3).appendChild(newRank);// Rank Config
+        H.appendChild(newUname);
+        H2.appendChild(newScore);
+        H3.appendChild(newRank);
+
+
+        td.appendChild(div).appendChild(H);
+        td2.appendChild(div2).appendChild(H2);
+        td3.appendChild(div3).appendChild(H3);
      
         console.log(td);
         console.log(td2);
         console.log(td3);
 
-        // const newDiv = `
-        //   <td class="col-4">
-        //     <div class="d-flex justify-content-center">
-        //       <h4>#</h4>
-        //     </div>
-        //   </td>
-        //   <td class="col-4">
-        //     <div class="d-flex justify-content-center">
-        //       <h4>${username}</h4>
-        //     </div>
-        //   </td>
-        //   <td class="col-4">
-        //     <div class="d-flex justify-content-center">
-        //       <h4>${score}</h4>
-        //     </div>
-        //   </td>
-        //     `;
-            
-        // const newElement = document.createRange().createContextualFragment(newDiv);
         document.getElementById("l_board").appendChild(tr).appendChild(td3);
         document.getElementById("l_board").appendChild(tr).appendChild(td);
         document.getElementById("l_board").appendChild(tr).appendChild(td2);
