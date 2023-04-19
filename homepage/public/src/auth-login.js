@@ -38,10 +38,10 @@ firebase.auth().onAuthStateChanged((user) => {
     if(user){
         console.log("User :", user);
         getList(user);
-        sendUserToAnotherFile(user);
+
     } else {
         // User is signed out
-        sendUserToAnotherFile(null);
+
       }
 });
 

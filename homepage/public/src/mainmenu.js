@@ -22,6 +22,30 @@ let readList = () => {
             })
         })
     })
+    const dbRef = firebase.database().ref("users");
+    dbRef.orderByChild("score").limitToLast(3).once("value", (snapshot) => {
+        const users = [];
+        let i = 0;
+        snapshot.forEach((childSnapshot) => {
+          const user = childSnapshot.val();
+          user.key = childSnapshot.key;
+          users.push(user);
+        });
+        
+        const sortedUsers = users.sort((a, b) => b.score - a.score);
+      
+        while(i<sortedUsers.length){
+          console.log(sortedUsers[i]);
+            i++;
+        }
+        document.getElementById("first").innerHTML = sortedUsers[0].username;
+        document.getElementById("sec").innerHTML = sortedUsers[1].username;
+        document.getElementById("third").innerHTML = sortedUsers[2].username;
+
+      
+        
+      
+      });
 }
 
 window.onload = readList;
