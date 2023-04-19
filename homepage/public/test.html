@@ -28,62 +28,26 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    
+  <link rel="stylesheet" href="leader_style.css" />
 </head>
-<style>
-    #container {
-  width: 50%;
-  height: auto;
-  position: relative;
- left: 25%;
- 
-}
 
-.row {
-  position: relative;
-  display: block;
-
-  width: 100%;
-  height: 40px;
-  border-bottom: 1px solid #AFAFAF;
-}
-
-.name {
-  position: relative;
-  display: inline-block;
-  width: 75%;
-  line-height: 45px;
-}
-
-.score {
-  position: relative;
-  display: inline-block;
-  width: 25%;
-}
-.row:nth-child(1) {
-  background: rgb(87, 208, 131);
-}
-.row:nth-child(2) {
-  background: gold;
-}
-
-.row:nth-child(3) {
-  background: #c0c0c0;
-}
-
-.row:nth-child(4) {
-  background: #cd7f32;
-}
-</style>
 <body>
-  <div class="yourScore">
-    
+  <div class="container-lboard">
+    <h1>Leaderboard</h1>
   </div>
-    <div id="container">
+  <div id="container">
     <div class="row">
-      <div class="name" id="yourName"></div><div class="score" id="yourScore"></div>
-      </div>
+      <h5 class="rank" >Rank</h5><h5 class="name" >Username</h5><h5 class="score">Score</h5>
     </div>
+    <div class="row">
+      <h5 class="rank" id="rank"></h5><h5 class="name" id="yourName"></h5><h5 class="score" id="yourScore"></h5>
+    </div>
+  </div>
+  <div id="mybutton">
+   
+    <a href="mainmenu.html" class="feedback">BACK</a>
+  </div>
+
 </body>
 </html>
 <script>

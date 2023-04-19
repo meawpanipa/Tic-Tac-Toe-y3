@@ -173,7 +173,7 @@
           >
             <div class="d-flex justify-content-center">
               <p class="fs-3 fw-bold">Player Rank :</p>
-              <p class="fs-3 fw-bold" id="player_rank">1</p>
+              <p class="fs-3 fw-bold" id="player_rank"></p>
             </div>
           </div>
           <div
@@ -218,7 +218,8 @@
       <div class="row d-flex justify-content-end">
         <div class="col-lg-1 col-sm-2 col-3 d-md-block d-none">
           <div id="mybutton">
-            <button class="feedback" type="button" onclick="">LOGOUT</button>
+            <button class="feedback" type="button" onclick="logOut()" 
+           >LOGOUT</button>
           </div>
         </div>
       </div>
@@ -410,10 +411,15 @@
         </button>
       </div>
     </div>
-    <script src="src/config.js"></script>
+    <script>
+      function logOut(){
+        window.location.assign("signin.html");
+      }
+    </script>
+
+  
     <script src="src/config.js"></script>
     <script src="src/mainmenu.js"></script>
-    <script src="src/auth-login.js"></script>
     <script src="src/sidebar.js"></script>
   </body>
 </html>

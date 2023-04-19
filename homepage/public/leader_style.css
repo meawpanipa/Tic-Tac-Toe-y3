@@ -1,16 +1,6 @@
-.yourrank{
-    background-color: rgb(154, 229, 141);
-    padding-top: 1%;
-    padding-bottom: 1%;
 
-   
-}
-.rank{
-    background-color: rgb(197, 197, 197);
-    padding-top: 1%;
-    padding-bottom: 1%;
-
-   
+body{
+    background-color: #827f7f;
 }
 .table {
     border-collapse: separate;
@@ -29,4 +19,60 @@
     position: fixed;
     bottom: 30px;
     left: 50px;
+  }
+  #container {
+    width: 50%;
+    height: auto;
+    position: relative;
+   left: 25%;
+  }
+  .container-lboard{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .row {
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background-color: #AFAFAF;;
+  }
+  .rank{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    line-height: 45px;
+    text-align: center;
+  }
+  .name {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    line-height: 45px;
+    text-align: center;
+  }
+  
+  .score {
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+  }
+  .row:nth-child(2) {
+    background-color: rgb(154, 229, 141);
+  }
+  .row:nth-child(3) {
+    background: gold;
+  }
+  
+  .row:nth-child(4) {
+    background: #c0c0c0;
+  }
+  
+  .row:nth-child(5) {
+    background: #cd7f32;
   }
