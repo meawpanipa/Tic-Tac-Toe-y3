@@ -124,7 +124,6 @@ document.querySelectorAll(".table-block div").forEach(el => {
 
         //ถ้ากดที่ช่องที่มีคนลงเเล้วจะขึ้นข้อความ "Change Table!"
         const pos = el.parentNode.id
-        const answerFeedback = document.querySelector("#feedback-msg-answer");
         // console.log(pos)
         // console.log(roomInfo["tables"][pos])
         const correctAnswer = roomInfo["tables"][pos]["answer"];
@@ -140,16 +139,14 @@ document.querySelectorAll(".table-block div").forEach(el => {
                     turn: roomInfo.turn === "X" ? "O" : "X",
                     time: 59
                 });
-                answerFeedback.innerText = `NameTH : ${roomInfo["tables"][$('#vocabModalLabel').val()]["nameTH"]}`;
-                answerFeedback.style.color = `green`;
+                // answerFeedbacstyle.color = `green`;
                 // setTimeout(() => {
                 $("#vocabModal").val("");
                 $("#vocabModal").modal("hide");
                 // }, 2000)
             } else {
                 console.log("Incorrect Answer");
-                answerFeedback.style.color = `crimson`;
-                answerFeedback.innerText = `Your answer is incorrect`;
+                // answerFeedback.snerText = `Your answer is incorrect`;
             }
         });
         
