@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        text-align:center;
+        color: white;
+        /* border: transparent; */
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .card img{
+        border-radius: 20px;
+        
+    }
+    .modal {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* gap: 0.4rem; */
+    /* width:450px; */
+    /* padding: 1.3rem; */
+    /* min-height: 250px; */
+    /* position: absolute; */
+    z-index: 2;
+    /* top: 20%; */
+    /* background-color: white; */
+    /* border: 1px solid #ddd; */
+    /* border-radius: 15px; */
+}
+.modal-dialog{
+    width: 450px;
+}
+
+/* .modal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+.footer-modal{
+    flex-direction: column;
+}
+
+.footer-modal h5{
+    cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+/* .btn-cancel{
+    cursor: pointer;
+    background-color:transparent;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+
+} */
+
+/* .btn-close {
+  transform: translate(10px, -20px);
+  padding: 0.5rem 0.7rem;
+  background: #eee;
+  border-radius: 50%;
+} */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(189, 187, 187, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+.overlayHow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(189, 187, 187, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: -2;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+<body>
+    <section class="vh-100">
+    <div class="container py-4  h-100 d-flex justify-content-center align-items-center">
+        <div class="container">  <!--d-flex justify-content-center align-items-center-->        
+        
+            <div class="row gy-2 d-flex justify-content-center align-items-center h-100"> <!--h-100-->
+                    <div class="col col-12 col-md-12 text-center">
+                        <h1>Choose Mode</h1>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                      <div class="card card-openMatch" id="card-openMatch">
+                        <img src="https://media.discordapp.net/attachments/807542228041465879/1091446176148115617/7800_5_2_05.jpg?width=433&height=558" 
+                        class="img-fluid" alt="...">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title">Match Player</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                      <div class="card card-openCreate" id="card-openCreate">
+                        <img src="https://media.discordapp.net/attachments/807542228041465879/1091446176148115617/7800_5_2_05.jpg?width=433&height=558" class="img-fluid" alt="...">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title">Create Room</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-12 col-md-4">
+                      <div class="card card-openSingle" id="card-openSingle">
+                        <img src="https://media.discordapp.net/attachments/807542228041465879/1091446176148115617/7800_5_2_05.jpg?width=433&height=558" class="img-fluid" alt="...">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title">Single Player</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col col-12 col-md-12 p-4 d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary">Back</button>
+                        <button type="button" class="btn btn-secondary btn-how" >How to play</button>
+                      </div>
+                    
+    <!-------------      modal -------------------------------->
+
+                      <section class="modal hidden">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="modal-title">Select Subject and difficulty</h5><br>
+                              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                              <!-- <br> -->
+                        </div>
+                            <div class="modal-body">
+                                <h5>subject</h5>
+                                <!-- <select class="form-select" aria-label="Default select example" id="form-select">
+                                    <option selected>Choose a subject</option>
+                                    <option value="1">Math</option>
+                                    <option value="2">Science</option>
+                                    <option value="3">Social</option>
+                                    <option value="4">English</option>
+                                    <option value="5">Thai</option>
+                                </select> -->
+                                <select class="form-select" id="inputCategory">
+                                    <option selected disabled>Choose a subject</option>
+                                    <option value="English">ภาษาอังกฤษ</option>
+                                    <option value="Thai">ภาษาไทย</option>
+                                    <option value="Social">สังคมศึกษา</option>
+                                </select>
+                               
+                                <h5>difficulty</h5>
+                                <!-- <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choose a difficulty</option>
+                                    <option value="1">Junior (Grade 7 - 9)</option>
+                                    <option value="2">Senior (Grade 10 - 12)</option>
+                                </select>  -->
+                                <select class="form-select" id="inputCategory2">
+                                    <option selected disabled>Choose a difficulty</option>
+                                    <option value="M3">M3</option>
+                                    <option value="M6">M6</option>
+                                </select>
+                                <div class="modal-text text-center mt-5 join-finding">Waiting for a Player...</div>
+                                <div class="footer-modal p-4 d-flex align-items-center justify-content-center">
+                                    <!-- <button type="button" class="btn btn-secondary" id="btn-match">Match</button> -->
+                                    <button type="button" class="btn btn-primary join-default" id="btn-find">Find</button>
+                                    <!-- <h5 onclick="closeModal(this)">cancel</h5> -->
+                                    <!-- <button class="btn-cancel">cancel</button> -->
+                                    <button type="button" class="btn btn-secondary join-default" onclick="closeModal(this)" id="btn-close">Close</button>
+                                    <button type="button" class="btn btn-secondary join-finding" id="btn-cancel-join">Cancel</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay hidden"></div>
+                      </section>
+
+                      <section class="modal hidden" id="modal-how">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="modal-title">How to play</h5><br>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                              <!-- <br> -->
+                        </div>
+                            <div class="modal-body">
+                                <p>Game Explanation</p>
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlayHow hidden"></div>
+                      </section>
+                      
+                      <!-- <button class="btn btn-open">Open Modal</button> -->
+                      
+                      <!-- <div class="modal" tabindex="-1"> -->
+                        
+                      <!-- </div> -->
+                  
+            
+          </div>
+    </div>
+</div>
+</section>
+<script>
+const modal = document.querySelector(".modal");
+const modalHow = document.querySelector("#modal-how");
+const overlay = document.querySelector(".overlay");
+const overlayHow = document.querySelector(".overlayHow");
+
+const openModalBtn = document.querySelector(".card-openMatch");
+const openModalBtn2 = document.querySelector(".card-openSingle");
+const openModalBtn3 = document.querySelector(".card-openCreate");
+const openModalBtn4 = document.querySelector(".btn-how");
+const closeModalBtn = document.querySelector(".btn-close");
+// const cancelModalBtn = document.querySelector(".btn-cancel");
+
+// close modal function
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  modalHow.classList.add("hidden");
+  overlayHow.classList.add("hidden");
+  // document.getElementById("form-select").reset();
+  // document.getElementsByClassName(".form-select").reset();
+  // document.querySelectorAll(".form-select").reset();
+  
+};
+
+//เคลียร์ form ยังไม่ได้
+const btnClose = document.getElementById("btn-close");
+btnClose.addEventListener("click", () => {
+  const form1 = document.getElementById("inputCategory");
+  const form2 = document.getElementById("inputCategory2");
+  form1.reset();
+  form2.reset();
+});
+// close the modal when the close button and overlay is clicked
+closeModalBtn.addEventListener("click", closeModal);
+// cancelModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+overlayHow.addEventListener("click", closeModal);
+
+// close modal when the Esc key is pressed
+// document.addEventListener("keydown", function (e) {
+//   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+//     closeModal();
+//   }
+// });
+
+// open modal function
+const openModalMatch = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  document.getElementById("modal-title").innerHTML = "Select Subject and difficulty";
+  // document.getElementById("btn-match").innerHTML = "Match";
+  
+};
+
+const openModalCreate = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  document.getElementById("modal-title").innerHTML = "Create Room";
+  document.getElementById("btn-match").innerHTML = "Create Room";
+};
+const openModalSingle = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  document.getElementById("modal-title").innerHTML = "Single Player";
+  document.getElementById("btn-match").innerHTML = "Start";
+
+};
+const openModalHow = function () {
+  modalHow.classList.remove("hidden");
+  overlayHow.classList.remove("hidden");
+};
+// open modal event
+openModalBtn.addEventListener("click", openModalMatch);
+openModalBtn2.addEventListener("click", openModalSingle);
+openModalBtn3.addEventListener("click", openModalCreate);
+openModalBtn4.addEventListener("click", openModalHow);
+
+
+</script>
+<script src="./src/app.js"></script>
+<script src="./src/matching.js"></script>
+</body>
+
+</html>
