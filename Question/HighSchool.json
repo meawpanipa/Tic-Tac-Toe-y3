@@ -1,204 +1,204 @@
 {
     "English" : [
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Situation: You are late for an appointment. As soon as you show up, you politely say, \"____\"",
+            "choices": ["Please accept my apologies.", 
+            "Don't worry. I'm here.", 
+            "I didn't mean to disturb you.", 
+            "I'm so lucky to see you again."],
+            "answer": "Please accept my apologies."
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Situation: Alan would like Nan to join his birthday party this Saturday, but Nan cannot come. She says, \"____\"",
+            "choices": ["Things do happen.", 
+            "I look forward to it.", 
+            "That's not important.", 
+            "I'm tied up."],
+            "answer": "I'm tied up."
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Situation: A man helped you lift a very heavy box. After you thanked him, he said, \"____\"",
+            "choices": ["It's no trouble.", 
+            "That doesn't matter.", 
+            "Keep it up.", 
+            "Take it for granted."],
+            "answer": "It's no trouble."
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Situation: Ben is seriously ill with a high temperature. He asks for your advice. You say, \"____\"",
+            "choices": ["How awful!", 
+            "Get well soon.", 
+            "I really feel bad about it.", 
+            "You'd better see a doctor."],
+            "answer": "You'd better see a doctor."
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Situation: Sarah sees a spider and is scared. In order to calm her down you say, \"____\"",
+            "choices": ["You need to be afraid.", 
+            "I count on you.", 
+            "It won't hurt you.", 
+            "I think you're awesome."],
+            "answer": "It won't hurt you."
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Tour assistant: Ladies and gentlemen. ____ before we board for the cruise.",
+            "choices": ["I think it's a good instruction", 
+            "Let me tell you my intention", 
+            "Please declare your subscription", 
+            "I've got some information for you"],
+            "answer": "I've got some information for you"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "The manager has no objection to ____ the meeting since his daughter is ill.",
+            "choices": ["John not attend", 
+            "John does not attend", 
+            "John's not attending", 
+            "John not to attend"],
+            "answer": "John's not attending"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "As soon as the examinees ____ the test, the score ____ .",
+            "choices": ["finish, will report", 
+            "will finish, will report", 
+            "finish, will be reported", 
+            "will finish, will be reported"],
+            "answer": "finish, will be reported"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "The product manager is explaining to the visitors ____.",
+            "choices": ["when does each machine in the shop work", 
+            "when each machine in the shop is working", 
+            "how is each machine in the shop working", 
+            "how each machine in the shop works"],
+            "answer": "how each machine in the shop works"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "The villagers tried to capture the ____ that had been feeding on their chickens.",
+            "choices": ["long snake of three meters", 
+            "three meters' long snake", 
+            "three-meter-long snake", 
+            "snake of a three-meter-long"],
+            "answer": "three-meter-long snake"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Does anybody know ____?",
+            "choices": ["whom that bike belong to", 
+            "to who does that bike belong", 
+            "who does that bike belong to", 
+            "to whom that bike belongs"],
+            "answer": "to whom that bike belongs"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "____ that Jake started his term paper later than his classmates, he was the first to hand it in.",
+            "choices": ["Despite", 
+            "Despite the fact", 
+            "Although", 
+            "In spite of"],
+            "answer": "Despite the fact"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "The salesperson asked that the customer ____ the receipt in order to exchange the goods previously bought.",
+            "choices": ["show", 
+            "shows", 
+            "to show", 
+            "must show"],
+            "answer": "show"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Three-hundred and sixty baht ____ too much for these pants. Can I have them for less?",
+            "choices": ["is", 
+            "had been", 
+            "are being", 
+            "have been"],
+            "answer": "is"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "During World War II, all inhabitants of that small village in the North of Thailand ____ .",
+            "choices": ["were killed with poison", 
+            "being killed by poisoning", 
+            "killed of poison", 
+            "had been killed of poison"],
+            "answer": "were killed with poison"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Try not to pack cans of fizzy drinks or chocolates as ____ to eat in the car.",
+            "choices": ["appetizers", 
+            "snacks", 
+            "meals", 
+            "feasts"],
+            "answer": "snacks"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "By the time John and Kate arrived at the auditorium, all the doors ____ .",
+            "choices": ["are locked", 
+            "had been locked", 
+            "are locking", 
+            "had been locking"],
+            "answer": "had been locked"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "In the box of five, I found two sets of broken cups and saucers and ____ .",
+            "choices": ["unbroken ones were the rest", 
+            "the rest three unbroke", 
+            "the rest were unbroken", 
+            "other unbroke"],
+            "answer": "the rest were unbroken"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "The new student from the city is not yet accustomed ____ local spicy food.",
+            "choices": ["to eat", 
+            "eat", 
+            "eating", 
+            "to eating"],
+            "answer": "to eating"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Paula wants to make a birthday cake for her daughter, but she does have ____ sugar left.",
+            "choices": ["many", 
+            "some", 
+            "much", 
+            "any of"],
+            "answer": "much"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Interviewer: ____ ?\u000ADavid: I have a positive attitude, communication skills and a good service mind.",
+            "choices": ["What is your motivation", 
+            "What is your future plan", 
+            "What are your strengths", 
+            "What is your opinion about the job"],
+            "answer": "What are your strengths"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Kim: Hi, I'm Park Jun Hye from Korea.\u000ASandra: ____ My name's Sandra Smith. I come from Australia.",
+            "choices": ["Long time no see.", 
+            "Glad to meet you.", 
+            "Very well, thank you.", 
+            "Haven't seen you in ages"],
+            "answer": "Glad to meet you."
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Waiter: Good evening. ____ ?\u000ADiner: Yes, a table for five under the name Jane.",
+            "choices": ["Can you sit, please", 
+            "What is your seat number", 
+            "Do you have a reservation", 
+            "Why don't you reserve a table"],
+            "answer": "Do you have a reservation"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "At this time next Monday, Mr. Walters ____ with his wife to Brazil.",
+            "choices": ["flies", 
+            "would be flying", 
+            "will have been flying", 
+            "will be flying"],
+            "answer": "will be flying"
         },
         {
-            "question": "",
-            "choices": ["", 
-            "", 
-            "", 
-            ""],
-            "answer": ""
+            "question": "Mr. Miller and Mr. Hill, the ____ , have cancelled their next classes.",
+            "choices": ["physic teachers", 
+            "teachers of physic", 
+            "teachers' physics", 
+            "physics teachers"],
+            "answer": "physics teachers"
         }                 
     ],
     "Thai": [
