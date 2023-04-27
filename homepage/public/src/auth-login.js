@@ -15,18 +15,19 @@ function loginUser(event){
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
         const user = firebase.auth().currentUser.uid;
+        const username = firebase.auth().currentUser.username;
         var database_ref = firebase.database().ref();
         loginFeedback.style = "color: green";
         loginFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> Login success!.";
         
         localStorage.setItem("current-user",user);
-
+        alert(`User Logged In!`);
         setTimeout(() => {
             // loginModal.hide();
             loginForm.reset();
             loginFeedback.innerHTML = "";
             window.location.assign("mainmenu.html");
-        }, 1000);
+        });
     })
     .catch((error) => {
         loginFeedback.style = "color: crimson";

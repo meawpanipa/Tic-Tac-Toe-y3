@@ -102,37 +102,45 @@
   </head>
 
   <body>
-    <div class="container pt-5 justify-content-center logged-in">
+    <div class="d-flex flex-column">
+
+    
+    <div class="container justify-content-center align-items-center">
       <div class="d-flex">
-        <div class="me-3 align-items-center h-100">
-          <h1 class="mt-3 mx-3" id="username">Username</h1>
+        <div class="me-3 align-items-center">
+          <h1 class="mt-3 mx-3" id="username"></h1>
         </div>
       </div>
     </div>
 
-    <div class="container logged-in">
-      <div class="row">
-        <div class="p-5 justify-content-center block col-md-6 col-12 pt-3 px-3">
+    <div class="container bg-warning ">
+      <div class="row" >
+        <div class="p-0 p-lg-0 p-md-0  pb-lg-0 pt-3 px-3 pt-md-0 pt-lg-0 pb-md-0 pb-sm-2 justify-content-center block col-md-6 col-12" class="l_block">
           <div
-            class="p-5 justify-content-center profile col-12 h-100 d-inline-block"
+            class="p-5 pt-3 justify-content-center profile col-12 d-inline-block" style="height: 100%;"
           >
             <div class="d-flex justify-content-center">
               <h1>Player State</h1>
             </div>
-            <div class="d-flex justify-content-center">
-              <p class="fw-bold mt-5" style="font-size: 250%">Total Score</p>
-              <p id="player_score" class="fw-bold" style="font-size: 600%">
-                100
-              </p>
-              <p class="fw-bold mt-5" style="font-size: 250%">Point</p>
+            <div class="d-flex justify-content-center bg-info">
+              <p class="fw-bold mt-5 bg-danger" style="font-size: 200%">Total Score</p>
+              <p id="player_score" class="fw-bold" style="font-size: 600%"></p>
+              <p class="fw-bold mt-5" style="font-size: 200%">Point</p>
             </div>
             <hr />
 
-            <div class="  ">
+            <div >
               <div class="row">
                 <div class="d-flex justify-content-between">
-                  <h5>Win Rate</h5>
-                  <h5 id="win_rate">100</h5>
+                  <h5>Total Match</h5>
+                  <h5 id="round" class="player_data"></h5>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="d-flex justify-content-between">
+                  <h5 class="player_stat">Win Rate</h5>
+                  <h5 id="win_rate" class="player_data"></h5>
                 </div>
               </div>
 
@@ -140,45 +148,43 @@
 
               <div class="row">
                 <div class="d-flex justify-content-between">
-                  <h5>Correct Rate</h5>
-                  <h5 id="correct_rate">100</h5>
+                  <h5 class="player_stat">Correct Rate</h5>
+                  <h5 id="correct_rate" class="player_data"></h5>
                 </div>
               </div>
               <hr />
               <div class="row">
                 <div class="d-flex justify-content-between">
-                  <h5>Number of Wins</h5>
-                  <h5 id="winNum">100</h5>
+                  <h5 class="player_stat">Number of Wins</h5>
+                  <h5 id="winNum"></h5>
                 </div>
               </div>
               <hr />
               <div class="row">
                 <div class="d-flex justify-content-between">
-                  <h5>Number of Question</h5>
-                  <h5 id="questionNum">100</h5>
+                  <h5 class="player_stat">Number of Question</h5>
+                  <h5 id="questionNum" class="player_data"></h5>
                 </div>
               </div>
 
-              <hr />
+             
             </div>
           </div>
         </div>
 
-        <div
-          class="p-5 justify-content-center logged-in block col-md-6 col-12 pt-3 px-3"
-        >
+        <div class="p-0  justify-content-center block col-md-6 col-12 pt-2 pt-sm-0 px-3 bg-info" style="height: 75vh;">
           <div
-            class="p-5 justify-content-center logged-in profile col-12 d-inline-block"
-            style="height: auto"
+            class="p-5 d-flex justify-content-center align-items-center profile fs-1 "
+            style="height: 20%"
           >
-            <div class="d-flex justify-content-center">
-              <p class="fs-3 fw-bold">Player Rank :</p>
-              <p class="fs-3 fw-bold" id="player_rank"></p>
-            </div>
+          
+              <p class="fs-1 fw-bold" style="margin-bottom: 0%;">Your Rank :</p>
+              <p class="fs-1 fw-bold" id="player_rank" style="margin-bottom: 0%;"></p>
+         
           </div>
           <div
-            class="p-4 justify-content-center logged-in profile col-12 mt-2 d-inline-block"
-            style="height: auto"
+            class="p-4 justify-content-center profile col-12 mt-2 d-inline-block"
+            style="height: 30vh"
           >
             <div class="row">
               <div class="d-flex justify-content-center">
@@ -194,21 +200,21 @@
             </div>
           </div>
           <a
-            href="test.html"
-            class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block menubtn"
-            style="height: auto"
+            href="leaderboard.html"
+            class="p-5 d-flex justify-content-center align-items-center profile col-12 mt-2 menubtn fs-1"
+            style="height: 0%"
           >
-            <div class="d-flex justify-content-center fs-1">Leaderboard</div>
+           Leaderboard
           </a>
           <a
             href=".html"
-            class="p-5 justify-content-center logged-in profile col-12 mt-2 d-inline-block menubtn"
-            style="height: auto"
+            class="d-flex justify-content-center align-items-center profile col-12 mt-2 menubtn fs-1"
+            style="height: 22.5vh"
           >
             <div class="d-flex justify-content-center fs-1">Start</div>
           </a>
           <div class="row profile mt-2 mx-lg-2 d-md-none">
-            <button class="glow-on-hover fs-1 fw-bold" type="button" onclick="">
+            <button class="glow-on-hover fs-1 fw-bold" type="button" onclick="logOut()">
               LOGOUT
             </button>
           </div>
@@ -218,13 +224,15 @@
       <div class="row d-flex justify-content-end">
         <div class="col-lg-1 col-sm-2 col-3 d-md-block d-none">
           <div id="mybutton">
-            <button class="feedback" type="button" onclick="logOut()" 
-           >LOGOUT</button>
+            <button class="feedback" type="button" onclick="logOut()">
+              LOGOUT
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="container logged-in">
+  </div>
+    <!-- <div class="container">
       <div id="mySidebar" class="sidebar" style="">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
         <div class="tab d-flex justify-content-center">
@@ -240,7 +248,7 @@
           </button>
         </div>
 
-        <!-- friendlist -->
+        friendlist
         <div class="d-felx">
           <div id="friend_list" class="tabcontent">
             <div class="container p-3 pt-4">
@@ -254,7 +262,7 @@
                 </div>
               </div>
             </div>
-            <!-- Addname here -->
+      
             <div class="container bg-warning friendblock" id="friendblock">
               <div class="row">
                 <div
@@ -294,43 +302,27 @@
               </div>
             </div>
             <div class="row">
-              <div class="container">
+              <div class="container"><form id="searchForm"></form>
                 <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search player name"
-                  />
-                  <div class="input-group-append">
+                  
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search player name"
+                      id="searchInput"
+                    />
+                  
+
+                  <div class="input-group-append" id="searchBtn">
                     <button class="btn btn-secondary" type="button">
                       <span class="bi bi-search"></span>
                     </button>
                   </div>
-                </div>
-                <div
-                  class="container bg-warning requestblock"
-                  id="requestblock"
-                >
-                  <div class="row">
-                    <div
-                      class="col-4 d-flex justify-content-center"
-                      id="friend_pic"
-                    >
-                      Picture
-                    </div>
-                    <div class="col-6">
-                      <div class="row fs-4" id="friend_name">Friendname</div>
-                      <div class="row fs-4 mt-2">
-                        <div class="btn btn-success col-5 mx-1" id="addbtn">
-                          Add
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <!-- Friend Request -->
-                <div class="container p-3 pt-4">
+                </div></form>
+                <div id="addFriend"></div>
+                <hr /> -->
+    <!-- Friend Request -->
+    <!-- <div class="container p-3 pt-4">
                   <div class="row">
                     <div class="d-flex justify-content-start col-8">
                       <h3>Friend Request</h3>
@@ -340,37 +332,10 @@
                       <h3>/20</h3>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
-                <!-- Add Request here -->
-                <div
-                  class="container bg-warning requestblock"
-                  id="requestblock"
-                >
-                  <div class="row">
-                    <div
-                      class="col-4 d-flex justify-content-center"
-                      id="friend_pic"
-                    >
-                      Picture
-                    </div>
-                    <div class="col-6">
-                      <div class="row fs-4" id="friend_name">Friendname</div>
-                      <div class="row fs-4 mt-2">
-                        <div class="btn btn-success col-5 mx-1" id="acceptbtn">
-                          Accept
-                        </div>
-                        <div class="btn btn-danger col-5 mx-1" id="rejectbtn">
-                          Reject
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="container bg-warning requestblock"
-                  id="requestblock"
-                >
+    <!-- Add Request here -->
+    <!-- <div class="container bg-warning requestblock" id="request">
                   <div class="row">
                     <div
                       class="col-4 d-flex justify-content-center"
@@ -395,9 +360,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div
+    <!-- <div
         id="main"
         class="position-absolute"
         style="bottom: 50%; padding: 0; right: 0%"
@@ -409,17 +374,18 @@
         >
           <span><i class="bi bi-people-fill"></i> </span>
         </button>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div>  -->
     <script>
-      function logOut(){
-        window.location.assign("signin.html");
+      function logOut() {
+        window.location.assign("index.html");
+        localStorage.removeItem("current-user");
       }
     </script>
 
-  
     <script src="src/config.js"></script>
     <script src="src/mainmenu.js"></script>
-    <script src="src/sidebar.js"></script>
+    <!-- <script src="src/search.js"></script>
+    <script src="src/sidebar.js"></script> -->
   </body>
 </html>

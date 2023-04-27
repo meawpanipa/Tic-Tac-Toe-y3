@@ -6,6 +6,10 @@ function openNav() {
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginRight = "0";
+    let element = document.getElementById("requestblock");
+    document.getElementById("searchForm").reset();
+    element.remove();
+    
   }
   function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
