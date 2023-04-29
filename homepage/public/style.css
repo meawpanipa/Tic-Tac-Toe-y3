@@ -1,44 +1,65 @@
 body{
-  background-color: rgb(138, 125, 125);
-
+  background-image: url("/pic/bg.png");
+  background-color: #cccccc;
 }
-
 .block{
-  /* background-color: rgb(195, 195, 195); */
-  
   border-radius:10px;
 }
 .profile{
-  background-color: pink;
-  
+  background-color: rgba(244, 135, 153, 0.443);
+  color: rgb(143, 17, 88);
   border-radius:10px;
 }
-
-
+.pStat{
+  font-size: 5vw;
+}
+.statInfo{
+  font-size: 3vw;
+}
+.menubtn{
+  background-color: rgb(255, 148, 166);
+  text-decoration: none;
+  color: rgb(143, 17, 88);
+  transition: 0.3s;
+  transform: scale(1);
+}
+.menubtn:hover{
+  transition: 0.3s;
+  transform: scale(1.05);
+  background-color: rgb(245, 122, 140);
+  text-decoration: none;
+  color: rgb(255, 252, 254);
+}
 .pinkbg{
 background-color: pink;
 }
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
 
 .feedback {
-  background-color : #31B0D5;
+  background-color :  rgb(255, 148, 166);
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
-  border-color: #46b8da;
+  border-color: rgb(255, 148, 166);
+  
 }
-
+.feedback:hover{
+  transition: 0.3s;
+  background-color: rgb(245, 122, 140);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: rgb(255, 148, 166);
+}
 #mybutton {
   position: fixed;
   bottom: 30px;
   right: 50px;
 }
-
 .l_block{
-  height: 80vh;
+  height: 70vh;
+}
+.r_block{
+  height: auto;
 }
 
 

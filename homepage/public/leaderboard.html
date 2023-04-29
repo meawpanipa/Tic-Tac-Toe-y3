@@ -8,7 +8,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homepage</title>
+  <link rel="icon" href="\pic\logo4.png">
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
@@ -29,22 +29,39 @@
   ></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <link rel="stylesheet" href="leader_style.css" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container-lboard">
-    <h1>Leaderboard</h1>
+  <div class="container d-flex justify-content-center  w-25 mt-3">
+    <h1 style="font-size: 400%;font-weight: bold;color: rgb(143, 17, 88);">Leaderboard</h1>
   </div>
-  <div id="container">
-    <div class="row">
-      <h5 class="rank" >Rank</h5><h5 class="name" >Username</h5><h5 class="score">Score</h5>
+  <div class="container d-flex justify-content-center p-0 flex-wrap" id="container">
+    <div class="row col-12 " style="background-color: rgb(245, 122, 140);">
+      <h5 class="rank d-flex justify-content-center col-4" style="font-family: 'Lilita One', cursive;" >Rank</h5>
+      <h5 class="name d-flex justify-content-center col-4" style="font-family: 'Lilita One', cursive;" >Username</h5>
+      <h5 class="score d-flex justify-content-center col-4" style="font-family: 'Lilita One', cursive;">Score</h5>
     </div>
     <div class="row">
-      <h5 class="rank" id="rank"></h5><h5 class="name" id="yourName"></h5><h5 class="score" id="yourScore"></h5>
+      <h5 class="rank d-flex justify-content-center col-4" id="rank"></h5>
+      <h5 class="name d-flex justify-content-center col-4" id="yourName"></h5>
+      <h5 class="score d-flex justify-content-center col-4" id="yourScore"></h5>
     </div>
   </div>
-  <div id="mybutton">
-   
+ 
+    
+    
+  
+  <div id="mybutton" style="font-weight: bold; ">
     <a href="mainmenu.html" class="feedback">BACK</a>
   </div>
 

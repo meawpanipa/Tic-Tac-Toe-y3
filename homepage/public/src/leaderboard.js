@@ -14,9 +14,9 @@ let leaderBoard = () => {
     while (i < sortedUsers.length) {
       const newDiv = `
         <div class="row">
-        <h5 class="rank" id="rank">${i + 1}</h5><h5 class="name">${
+        <h5 class="rank d-flex justify-content-center col-4" id="rank">${i + 1}</h5><h5 class="name d-flex justify-content-center col-4">${
         sortedUsers[i].username
-      }</h5><h5 class="score">${sortedUsers[i].score}</h5>
+      }</h5><h5 class="score d-flex justify-content-center col-4">${sortedUsers[i].score}</h5>
         </div>
         `;
         console.log(sortedUsers[i]);

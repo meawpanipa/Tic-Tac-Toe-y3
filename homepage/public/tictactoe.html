@@ -8,15 +8,12 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <!-- <link rel="stylesheet" href="./css/game.css"> -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <link rel="stylesheet" href="ttt_style.css">
 
 <head>
@@ -34,18 +31,13 @@
                 <div class="container d-flex justify-content-center user-block"
                     style="height: 100px;">
                     <div class="row ">
-                        <div class="d-flex justify-content-center align-items-center" style="margin-top: 10%">
-                            <!-- <div class="col-6">
+                        <div class="d-flex justify-content-center " style="margin-top: 10%">
+                            <div class="col-6">
                                 <h1 id="correct_rate" class="text-light"> pic</h1>
-                            </div> -->
-                            <!-- <div class="game-user-name text-light col-6">
-                                <h1 id="opponent" class="text-light">Username</h1>
-                                -
-                            </div> -->
-                            <div class="game-info-user col-6" id="game-info-user-x">
-                                <div class="game-user-name text-light">-</div>
                             </div>
-                            
+                            <div class="col-6">
+                                <h1 id="opponent" class="text-light">Username</h1>
+                            </div>
 
 
                         </div>
@@ -60,8 +52,8 @@
     <div class="position-absolute top-50 start-50 translate-middle bg-secondary rounded-3 p-1" style="width: 90%; top: 40%;">
         <div class="container " style="position: relative;">
             <div class="row justify-content-center fs-1  ">
-                <div class="row justify-content-center fs-1 timer p-3 mt-3" id="game-info-time">
-                    Timer:<span>59</span>
+                <div class="row justify-content-center fs-1 timer p-3 mt-3" id="timer">
+                    Timer
                 </div>
             </div>
 
@@ -69,39 +61,21 @@
             <div class="row justify-content-center mt-3 ttt-block " style="position: relative;">
 
                 <div class="container d-flex d align-items-center justify-content-center ">
-                    <table class="">
+                    <table class="" style="">
                         <tr>
-                            <td  class="table-block" id="row-1-col-1">
-                                <div><img src=""></div>
-                            </td>
-                            <td  class="table-block" id="row-1-col-2">
-                                <div><img src=""></div>
-                            </td>
-                            <td  class="table-block" id="row-1-col-3">
-                                <div><img src=""></div>
-                            </td>
+                            <td id="A0" class="table-block"></td>
+                            <td id="A1" class="table-block"></td>
+                            <td id="A2" class="table-block"></td>
                         </tr>
                         <tr>
-                            <td  class="table-block" id="row-2-col-1">
-                                <div><img src=""></div>
-                            </td>
-                            <td  class="table-block" id="row-2-col-2">
-                                <div><img src=""></div>
-                            </td>
-                            <td class="table-block" id="row-2-col-3">
-                                <div><img src=""></div>
-                            </td>
+                            <td id="B0" class="table-block"></td>
+                            <td id="B1" class="table-block"></td>
+                            <td id="B2" class="table-block"></td>
                         </tr>
                         <tr>
-                            <td  class="table-block" id="row-3-col-1">
-                                <div><img src=""></div>
-                            </td>
-                            <td  class="table-block" id="row-3-col-2">
-                                <div><img src=""></div>
-                            </td>
-                            <td  class="table-block" id="row-3-col-3">
-                                <div><img src=""></div>
-                            </td>
+                            <td id="C0" class="table-block"></td>
+                            <td id="C1" class="table-block"></td>
+                            <td id="C2" class="table-block"></td>
                         </tr>
                         <tr>
 
@@ -135,16 +109,14 @@
                 <div class="container d-flex justify-content-center user-block-btm"
                     style="height: 100px;">
                     <div class="row ">
-                        <div class="d-flex justify-content-center align-items-center" style="margin-top: 10%">
-                            <!-- <div class="col-6">
+                        <div class="d-flex justify-content-center " style="margin-top: 10%">
+                            <div class="col-6">
                                 <h1 id="correct_rate" class="text-light"> pic</h1>
-                            </div> -->
-                            <!-- <div class="col-6">
+                            </div>
+                            <div class="col-6">
                                 <h1 id="opponent" class="text-light">Username</h1>
-                            </div> -->
-                            <div class="game-info-user col-12" id="game-info-user-o">
-                                <div class="game-user-name text-light">-</div>
-                            </div>    
+                            </div>
+
 
                         </div>
                     </div>
@@ -154,68 +126,13 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="vocabModal" tabindex="-1" aria-labelledby="vocabModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="modal-title" id="vocabModalLabel">
-                        <div class="vocabModal-table fs-5">Row-0-Col-0</div>
-                        <div class="vocabModal-time fs-5">Time : 59</div>
-                    </div>
-                    <!-- <button type="button" class="btn-close btnClose" data-bs-dismiss="modal" aria-label="Close"></button> -->
-                </div>
-                <div class="modal-body">
-                    <h2 id="question"></h2>
-                    <div id="choice-con" class="gap-2">
-                    <button class="btn btn-primary choice" id="choice1"></button>
-                    <button class="btn btn-primary choice" id="choice2"></button>
-                    <button class="btn btn-primary choice" id="choice3"></button>
-                    <button class="btn btn-primary choice" id="choice4"></button>
-                    </div>
-                </div>
-                <!-- <div class="modal-footer">
-                </div> -->
-            </div>
-        </div>
-    </div>
 
-    <!-- When Finish -->
-    <div class="modal fade" id="finishModal" tabindex="-1" aria-labelledby="finishModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Game Over</h5>
-                </div>
-                <div class="modal-body">
-                    <div id="whoWin" class="text-center fs-1">You Win!!!</div>
-                    <div id="desGameOver" class="text-center fs-3">-</div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btn-exit">Exit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-
-    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="messageModalLabel">XO-NET</h5>
-            </div>
-            <div class="modal-body fs-1 text-center"></div>
-        </div>
-      </div>
 
 
 
 
     <!-- import external JavaScript file -->
-    <script src="./src/app.js"></script>
-    <script src="./src/game.js"></script>
+
 </body>
 
 </html>
