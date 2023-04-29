@@ -30,7 +30,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <link rel="stylesheet" href="leader_style.css" />
 
-  <link rel="stylesheet" href="style.css" />
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,10 +42,13 @@
 </head>
 
 <body>
-  <div class="container d-flex justify-content-center  w-25 mt-3">
-    <h1 style="font-size: 400%;font-weight: bold;color: rgb(143, 17, 88);">Leaderboard</h1>
+  <div id="mybutton2" class="d-flex w-100" >
+    <a href="mainmenu.html" class="feedback2">BACK</a>
   </div>
-  <div class="container d-flex justify-content-center p-0 flex-wrap" id="container">
+  <div class="container d-flex justify-content-center w-25 mt-3">
+    <h1 class="lBoard">Leaderboard</h1>
+  </div>
+  <div class="container d-flex justify-content-center p-0 flex-wrap mb-2" id="container">
     <div class="row col-12 " style="background-color: rgb(245, 122, 140);">
       <h5 class="rank d-flex justify-content-center col-4" style="font-family: 'Lilita One', cursive;" >Rank</h5>
       <h5 class="name d-flex justify-content-center col-4" style="font-family: 'Lilita One', cursive;" >Username</h5>
@@ -61,10 +64,10 @@
     
     
   
-  <div id="mybutton" style="font-weight: bold; ">
+  <div id="mybutton" class="d-flex w-100" >
     <a href="mainmenu.html" class="feedback">BACK</a>
   </div>
-
+  
 </body>
 </html>
 <script>

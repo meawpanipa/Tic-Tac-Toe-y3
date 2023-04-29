@@ -62,4 +62,8 @@ background-color: pink;
   height: auto;
 }
 
+.logoutBtn{
+  background: rgb(255, 148, 166);
+  border: none;
 
+}
