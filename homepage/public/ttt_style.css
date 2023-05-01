@@ -1,25 +1,26 @@
 html,body{
     height: calc(100% - 1px);
-    font-family: 'Crimson Text', serif;
-    font-family: 'Trirong', serif;
-
+    font-family: 'Concert One', cursive;
+    background-image: url("/pic/bg.png");
   }
  
   
   .table-block{
-    width: 8vw;
-    height: 8vw;
-    color: rgb(0, 0, 0);
+    width: 9vw;
+    height: 9vw;
+    color: rgb(255, 148, 166);
     font-size: 125px;
     font-weight: bold;
     line-height: 50px;
-    border: solid 3px rgb(0, 0, 0);
+    border: solid 3px rgb(255, 255, 255);
     text-align: center;
     
   }
-  .ttt-block{
-    
+  .board{
 
+    width: 80%;
+    background-color:  rgba(244, 135, 153, 0.443);
+    border-radius:20px ;
   }
   .bottom {
     position: absolute;
@@ -27,24 +28,143 @@ html,body{
 
   }
   .user-block{
-  
-    background-color: rgb(44, 44, 44);
+    color: white;
+    background-color: rgb(255, 148, 166);
     border-radius:0px 0px 20px 20px;
+
+    width: 40%;
+    height: 7vh;
+    text-align: center;
   }
   .user-block-btm{
-    background-color: rgb(44, 44, 44);
-    border-radius:20px 20px 0px 0px ;
+    color: white;
+    background-color: rgb(255, 148, 166);
+    border-radius:20px 20px 0px 0px;
+
+    width: 40%;
+    height: 7vh;
+    text-align: center;
   }
+
   .timer{
-    background-color: rgb(216, 71, 119);
-    border-radius:20px ;
-    width: 200px;
-  }
-  .specialfx{
-    background-color: rgb(41, 41, 41);
-    border-radius:20px ;
-    width: 100px;
+    color: rgb(143, 17, 88);
+    border-radius:5px ;
     height: 100px;
-    top: 0%;
-    margin: 1%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 300%;
+  }
+  
+ 
+  .specialfx{
+    background-color: rgb(255, 148, 166);
+    border-radius:20px ;
+    width: 9vh;
+    height: 9vh;
+    font-size: 200%;
+
+  }
+  .specialfx:hover{
+    transition: 0.3s;
+  transform: scale(1.05);
+  background-color: rgb(245, 122, 140);
+  cursor: pointer;
+
+  }
+  .fxRow{
+    justify-content: end;
+    margin-right: 2%;
+
+  }
+
+  @media screen and (max-width: 750px) {
+    .user-block{
+
+      width: 80%;
+      height: 7vh;
+
+    }
+    .user-block-btm{
+
+      width: 80%;
+      height: 7vh;
+
+    }
+    .board{
+
+      width: 95%;
+      height: 80%
+
+    }
+
+    .timer{
+      color: rgb(143, 17, 88);
+      font-weight: bold;
+      border-radius:5px ;
+
+      height: 50px;
+      font-size: 200%;
+    }
+    .table-block{
+      width: 20vw;
+      height: 20vw;
+      color: rgb(255, 148, 166);
+      font-size: 125px;
+      font-weight: bold;
+      line-height: 50px;
+
+      text-align: center;
+      
+    }
+    .fxRow{
+      justify-content: center;
+      margin-right: 0%;
+    }
+  }
+
+  
+  @media screen and (max-width: 515px) {
+    .user-block{
+
+      width: 80%;
+      height: 7vh;
+
+    }
+    .user-block-btm{
+
+      width: 80%;
+      height: 7vh;
+
+    }
+    .board{
+
+      width: 95%;
+      height: 80%
+
+    }
+
+    .timer{
+
+      border-radius:5px ;
+
+      height: 50px;
+      font-size: 200%;
+    }
+    .table-block{
+      width: 30vw;
+      height: 30vw;
+      color: rgb(255, 148, 166);
+      font-size: 125px;
+      font-weight: bold;
+      line-height: 50px;
+      border: solid 3px rgb(255, 255, 255);
+      text-align: center;
+      
+    }
+    .fxRow{
+      justify-content: center;
+      margin-right: 0%;
+    }
   }

@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Homepage</title>
+<title>Tic Tac Toe</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
@@ -14,8 +14,16 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<link rel="stylesheet" href="ttt_style.css">
 
+<link rel="stylesheet" href="ttt_style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="icon" href="\pic\logo4.png">
 <head>
     <meta charset="utf-8">
     <title>Tic Tac Toe</title>
@@ -25,107 +33,68 @@
 </head>
 
 <body class="">
-    <div class="container">
-        <div class="position-absolute top-0  start-50 translate-middle-x" style="width: 100%;">
-            <div class="containter d-flex justify-content-center ">
-                <div class="container d-flex justify-content-center user-block"
-                    style="height: 100px;">
-                    <div class="row ">
-                        <div class="d-flex justify-content-center " style="margin-top: 10%">
-                            <div class="col-6">
-                                <h1 id="correct_rate" class="text-light"> pic</h1>
-                            </div>
-                            <div class="col-6">
-                                <h1 id="opponent" class="text-light">Username</h1>
-                            </div>
+    <div class="container-fluid fixed-top  d-flex justify-content-center">
+        <div class="user-block d-flex justify-content-center align-items-center" >
+            <h2 id="username">Playername</h2>
+        </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center h-100 align-items-center ">
+        <div class="board d-flex justify-content-center flex-column pb-4">
+           <div class="row d-flex justify-content-center">
+            <div class="timer" id="timer">
+                timer
+            </div>
+           </div>
+           <div class="row h-100">
+            <div class="container d-flex d align-items-center justify-content-center p-4 ">
+                <table class="" style="">
+                    <tr>
+                        <td id="A0" class="table-block"></td>
+                        <td id="A1" class="table-block"></td>
+                        <td id="A2" class="table-block"></td>
+                    </tr>
+                    <tr>
+                        <td id="B0" class="table-block"></td>
+                        <td id="B1" class="table-block"></td>
+                        <td id="B2" class="table-block"></td>
+                    </tr>
+                    <tr>
+                        <td id="C0" class="table-block"></td>
+                        <td id="C1" class="table-block"></td>
+                        <td id="C2" class="table-block"></td>
+                    </tr>
+                    <tr>
 
-
-                        </div>
-                    </div>
-
-
+                    </tr>
+                </table>
+                
+            </div>
+            
+            
+            </div>
+            <div class="row d-flex  fxRow">
+                <div class="specialfx d-flex justify-content-center align-items-center mx-2">
+                    
+                        <i class="bi bi-arrow-down-square text-light"></i>
+     
+                </div>
+                <div class="specialfx d-flex justify-content-center align-items-center mx-2">
+                    
+                        <i class="bi bi-shuffle text-light"></i>
+     
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="position-absolute top-50 start-50 translate-middle bg-secondary rounded-3 p-1" style="width: 90%; top: 40%;">
-        <div class="container " style="position: relative;">
-            <div class="row justify-content-center fs-1  ">
-                <div class="row justify-content-center fs-1 timer p-3 mt-3" id="timer">
-                    Timer
-                </div>
-            </div>
-
-
-            <div class="row justify-content-center mt-3 ttt-block " style="position: relative;">
-
-                <div class="container d-flex d align-items-center justify-content-center ">
-                    <table class="" style="">
-                        <tr>
-                            <td id="A0" class="table-block"></td>
-                            <td id="A1" class="table-block"></td>
-                            <td id="A2" class="table-block"></td>
-                        </tr>
-                        <tr>
-                            <td id="B0" class="table-block"></td>
-                            <td id="B1" class="table-block"></td>
-                            <td id="B2" class="table-block"></td>
-                        </tr>
-                        <tr>
-                            <td id="C0" class="table-block"></td>
-                            <td id="C1" class="table-block"></td>
-                            <td id="C2" class="table-block"></td>
-                        </tr>
-                        <tr>
-
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="container  fs-1 ">
-                <div class="row  fs-1 p-3 " id="">
-                    <div class=" col d-flex justify-content-end">
-                        <div class="specialfx d-flex justify-content-center position-relative">
-                            <div class="position-absolute" style="top: 20%;">
-                                <i class="bi bi-arrow-down-square text-light"></i>
-                            </div> 
-                        </div>
-                        <div class="specialfx d-flex justify-content-center position-relative">
-                            <div class="position-absolute" style="top: 20%;">
-                                <i class="bi bi-shuffle text-light"></i>
-                            </div> 
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+    <div class="container-fluid fixed-bottom d-flex justify-content-center">
+        <div class="user-block-btm d-flex justify-content-center align-items-center" >
+            <h2 id="username">Playername</h2>
         </div>
     </div>
 
-    <div class="container">
-        <div class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 100%;">
-            <div class="containter d-flex justify-content-center ">
-                <div class="container d-flex justify-content-center user-block-btm"
-                    style="height: 100px;">
-                    <div class="row ">
-                        <div class="d-flex justify-content-center " style="margin-top: 10%">
-                            <div class="col-6">
-                                <h1 id="correct_rate" class="text-light"> pic</h1>
-                            </div>
-                            <div class="col-6">
-                                <h1 id="opponent" class="text-light">Username</h1>
-                            </div>
+     
 
-
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
 
