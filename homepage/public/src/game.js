@@ -240,8 +240,7 @@ $(".choice").click(function() {
         });
 
 const btnReplace = document.getElementById("btn-replace");
-const specialfx = document.getElementsByClassName(".specialfx");
-// const disabled = document.getElementsByClassName(".disabled");
+const specialfx = document.getElementsByClassName("specialfx");
 
 const imgElements = document.querySelectorAll(".table-block img");
 let isBtnReplaceDisabled = false; 
