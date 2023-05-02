@@ -21,8 +21,9 @@ function createUser(event){
         signupFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> Sign up completed.";
         // Create User data
         var user_data = {
+            uid: user.uid,
             email : email,
-            username : username,
+            name : username,
             // last_login : Date.now(),
             answer : 0,
             correctNum : 0,
