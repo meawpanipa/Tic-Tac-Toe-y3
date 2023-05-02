@@ -55,7 +55,14 @@ html,body{
     justify-content: center;
     font-size: 300%;
   }
-  
+  .game-user-name{
+    font-size: 180%;
+    
+  }
+  .game-user-name2{
+    font-size: 180%;
+    
+  }
  
   .specialfx{
     background-color: rgb(255, 148, 166);
@@ -180,7 +187,10 @@ html,body{
       cursor: pointer;
     }
 
-   
+    .table-block:hover{
+      background-color: rgb(255, 180, 193);
+      cursor: pointer;
+    }
     .timer{
       color: rgb(143, 17, 88);
       font-weight: bold;
@@ -227,10 +237,7 @@ html,body{
       width: 95%;
       height: 80%
     }
-    .table-block:hover{
-      background-color: rgb(255, 180, 193);
-      cursor: pointer;
-    }
+
     .timer{
 
       border-radius:5px ;
