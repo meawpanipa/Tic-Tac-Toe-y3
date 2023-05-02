@@ -1,7 +1,7 @@
 {
     "English" : [
         {
-            "question": "A: What do you want to do today?\u000AB: ________ .",
+            "question": "A: What do you want to do today? <br> B: ________ .",
             "choices": ["I'd do it again", 
             "I'd like to practice small talk", 
             "I'd rather keep quiet", 
@@ -9,17 +9,17 @@
             "answer": "I'd like to practice small talk"
         },
         {
-            "question": "Teacher: Are you ready to do the quiz?\u000AStudents: ________ .",
+            "question": "Teacher: Are you ready to do the quiz? <br> Students: ________ .",
             "choices": ["Normally", "Definitely", "Similarly", "Regularly"],
             "answer": "Definitely"
         },
         {
-            "question": "A: ________? You seem moody.\u000AB: I'm fed up with my work.",
+            "question": "A: ________? You seem moody. <br> B: I'm fed up with my work.",
             "choices": ["Who cares", "Guess what", "What'up", "How could you"],
             "answer": "What'up"
         },
         {
-            "question": "A: ________ on \"Futsal\".\u000AB: Are you sure that nobody has chosen this topic?",
+            "question": "A: ________ on \"Futsal\". <br> B: Are you sure that nobody has chosen this topic?",
             "choices": ["I can take you", 
             "I will support you", 
             "I want to do a report", 
@@ -32,7 +32,7 @@
             "answer": "that"
         },
         {
-            "question": "A: ________ ?\u000AB: I'm cleaning my keyboard.",
+            "question": "A: ________ ? <br> B: I'm cleaning my keyboard.",
             "choices": ["What can you do", 
             "What should you do", 
             "What are you doing", 
@@ -45,7 +45,7 @@
             "answer": " excited"
         },
         {
-            "question": "A: ________ ?\u000AB: I'm kind of busy but I can spare you a few minutes. What's up?",
+            "question": "A: ________ ? <br> B: I'm kind of busy but I can spare you a few minutes. What's up?",
             "choices": ["Do you need help", 
             "Do you have a minute", 
             "Do you think you can do it", 
@@ -208,7 +208,7 @@
             "answer": "ตนเป็นที่พึ่งแห่งตน"
         },
         {
-            "question": "\"หยาดน้ำค้างที่กลิ้งอยู่บนใบหญ้า อยู่ได้เพียงขณะเดียวฉันใด ชีวิตคนก็เป็นเช่นนั้น\"\u000Aคำว่า \"หยาดน้ำค้าง\" สื่อความหมายโดยนัยถึงข้อใด",
+            "question": "\"หยาดน้ำค้างที่กลิ้งอยู่บนใบหญ้า อยู่ได้เพียงขณะเดียวฉันใด ชีวิตคนก็เป็นเช่นนั้น\" <br> คำว่า \"หยาดน้ำค้าง\" สื่อความหมายโดยนัยถึงข้อใด",
             "choices": ["ความไม่ยั่งยืน", 
             "ความไม่สมหวัง", 
             "ความไร้เดียงสา", 
