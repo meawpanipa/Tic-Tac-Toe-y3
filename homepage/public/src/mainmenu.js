@@ -106,6 +106,23 @@ const openModalMatch = function () {
 btnStart.addEventListener("click", openModalMatch);
 
 
+const inputCategory = document.getElementById('inputCategory');
+const inputCategory2 = document.getElementById('inputCategory2');
+
+inputCategory.addEventListener('change', function() {
+  if (inputCategory.value === 'Social') {
+    inputCategory2.innerHTML = `
+      <option selected disabled>Choose a difficulty</option>
+      <option value="M6">M6</option>
+    `;
+  } else {
+    inputCategory2.innerHTML = `
+      <option selected disabled>Choose a difficulty</option>
+      <option value="M3">M3</option>
+      <option value="M6">M6</option>
+    `;
+  }
+});
 
 // const element = document.getElementById("searchBtn");
 // element.addEventListener("click", function () {
