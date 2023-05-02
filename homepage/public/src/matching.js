@@ -1,5 +1,5 @@
 const refRooms = firebase.database().ref("Rooms")
-
+// const refUserList = firebase.database().ref("UserList")
 $("#btn-find").click(findingMatch)
 
 const findMatchModal = document.querySelector("#findMatchModal")
@@ -7,6 +7,7 @@ const findMatchModal = document.querySelector("#findMatchModal")
 firebase.auth().onAuthStateChanged((user) => {
     if (user){
         setUpProfile(user)
+        
     }
 })
 
@@ -17,19 +18,19 @@ function setUpProfile(user){
 
     refUsers.child(user.uid).once("value", (data) => {
         userProfile = data.val()
-        userEXP = userProfile.exp % 50;
-        userLevel = Math.ceil(userProfile.exp / 50);
-        $("#profile-img img").attr("src", `./img/profiles/${userProfile.img}.png`)
+        // userEXP = userProfile.exp % 50;
+        // userLevel = Math.ceil(userProfile.exp / 50);
+        // $("#profile-img img").attr("src", `./img/profiles/${userProfile.img}.png`)
         $("#profile-username").html(userProfile.name)
         $("#profile-email").html(userProfile.email)
         $("#profile-win").html(`Win : ${userProfile.win}`)
         $("#profile-lose").html(`Lose : ${userProfile.lose}`)
-        $("#profile-level").html(`Level : ${userLevel}`)
-        $("#profile-next-to").html(`Next to level ${userLevel+1}`)
-        $("#profile-exp-percent").html(`${userEXP} / 50`)
-        $("#profile-exp-progress-bar").attr({
-            style: `--exp-percent: calc(${(userEXP)}  / 50 * 100%)`
-        })
+        // $("#profile-level").html(`Level : ${userLevel}`)
+        // $("#profile-next-to").html(`Next to level ${userLevel+1}`)
+        // $("#profile-exp-percent").html(`${userEXP} / 50`)
+        // $("#profile-exp-progress-bar").attr({
+        //     style: `--exp-percent: calc(${(userEXP)}  / 50 * 100%)`
+        // })
     })
 
 }
@@ -38,11 +39,17 @@ function findingMatch(){
     const currentUser = firebase.auth().currentUser
     const category = $("#inputCategory").val()
     const category2 = $("#inputCategory2").val()
+
+    // const refScore = firebase.database().ref("users").child(currentUser.uid).child("score");
+    // refScore.once("value", function(snapshot) {
+    //     const score = snapshot.val();
+    //     console.log(score);
+    //   });
     if (!currentUser){
         alert("Please Login!")
         return
     }
-
+    //if player 1 winrate อยู่ระหว่าง 0-50 and player2 winrate อยู่ระหว่าง0-50ก็จับคู่กัน
     if (category && category2){
 
         refRooms.once("value", data => {
@@ -98,6 +105,84 @@ function findingMatch(){
         alert("Choose Category!")
     }
 }
+
+// function findingMatch() {
+//     const currentUser = firebase.auth().currentUser;
+//     const category = $("#inputCategory").val();
+//     const category2 = $("#inputCategory2").val();
+  
+//     if (!currentUser) {
+//       alert("Please Login!");
+//       return;
+//     } else {
+//       // อ่านค่า exp ของผู้เล่น
+//       const refExp = firebase.database().ref("UserList").child(currentUser.uid).child("exp");
+  
+//       refExp.once("value", function(snapshot) {
+//         const exp = snapshot.val();
+//         console.log(exp);
+  
+//         // หาคู่เกมส์ที่ต้องการจับคู่
+//         refRooms.once("value", data => {
+//           data = data.val();
+  
+//           if (!data){
+//               refRooms.push({
+//                   "user-x-id": currentUser.uid,
+//                   category: category,
+//                   category2: category2,
+//                   exp: exp
+//               });
+//           } else {
+//               let joined = false;
+  
+//               for (const roomID in data){
+//                   const room = data[roomID];
+  
+//                   // ถ้าผู้เล่นอยู่ในห้องเกมส์อื่นแล้ว ไม่จับคู่อีก
+//                   if (room["user-x-id"] == currentUser.uid || room["user-o-id"] == currentUser.uid){
+//                       joined = true;
+//                       return;
+//                   }
+  
+//                   // ค้นหาห้องเกมส์ที่เหมาะสม
+//                   if (room.category == category && room.category2 == category2){
+  
+//                       // ตรวจสอบค่า exp ของผู้เล่น ถ้าเท่ากัน จับคู่ได้
+//                       if (room.exp == exp){
+//                           if (!room["user-x-id"]){
+//                               refRooms.child(roomID).update({
+//                                   "user-x-id": currentUser.uid
+//                               });
+//                               joined = true;
+//                           } else if (!room["user-o-id"]){
+//                               refRooms.child(roomID).update({
+//                                   "user-o-id": currentUser.uid
+//                               });
+//                               joined = true;
+//                           }
+//                       }
+//                   }
+  
+//                   if (joined){
+//                       return;
+//                   }
+//               }
+  
+//               if (!joined){
+//                   refRooms.push({
+//                       "user-x-id": currentUser.uid,
+//                       category: category,
+//                       category2: category2,
+//                       exp: exp
+//                   });
+//               }
+//           }
+//         });
+//       });
+//     }
+//     // alert("Choose Category!");
+//   }
 
 function searchRoom(){
     const currentUser = firebase.auth().currentUser
@@ -170,8 +255,8 @@ function updateFindMatchContent(cmd, room={}){
         $("#inputCategory").val(room.category)
         $("#inputCategory").attr({disabled: "disabled"})
         $("#inputCategory2").attr({disabled: "disabled"})
-        $("#btn-join").html(`[${room.category}] Waiting for Player... (${room.time ?? 0})`)
-        $(".modal-text").html(`Waiting for Player... (${room.time ?? 0})`)
+        $("#btn-join").html(`[${room.category}] Waiting for Player(${room.time ?? 0})`)
+        $(".modal-text").html(`Waiting for Player(${room.time ?? 0})`)
     }
     else if (cmd === "found") {
         const currentUser = firebase.auth().currentUser
@@ -195,7 +280,10 @@ function updateFindMatchContent(cmd, room={}){
                             turn: "X",
                             time: 59
                         })
-                        randomVocab(room, user1, user2)
+                       
+                        randomQuestion(room)
+                        // randomQuestion(room)
+                        // loadquestion(room)
                     }
                 })
             })
@@ -209,6 +297,8 @@ function updateFindMatchContent(cmd, room={}){
                 if (count == 0){
                     clearInterval(countGoToRoom)
                     window.location.href = "./tictactoe.html"
+                    // document.querySelector("#modal-choose").classList.add("hidden-2");
+                    // document.querySelector("#overlay-choose").classList.add("hidden-2");
                 }
             }, 1000)
         }
@@ -262,69 +352,71 @@ refRooms.on("value", (data) => {
     }
 })
 
-function randomVocab(room, user1, user2){
-    let rdmVocab = [];
-    let user1Level = Math.ceil(user1.exp / 50);
-    let user2Level = Math.ceil(user2.exp / 50);
-    // const minLevel = Math.min(Math.floor(user1Level / 10), Math.floor(user2Level / 10))
+function randomQuestion(room){
+    let rdmQuestion = [];
     const category = $("#inputCategory").val()
     const category2 = $("#inputCategory2").val()
+    let allQuestion = []; // ตัวแปรเก็บคำศัพท์ทั้งหมดจากไฟล์ JSON
     if(category2 == "M3"){
-    $.getJSON("data/vocabulary.json", function(result){
-        const vocabs = result[room.category]
-        while (rdmVocab.length != 9){
-            let rdm = Math.floor((Math.random() * (vocabs.length - 1)));
-            // if (!rdmVocab.includes(vocabs[rdm]) && parseInt(vocabs[rdm].level) <= minLevel+1){
-            //     rdmVocab.push(vocabs[rdm])
-            // }
-            if (!rdmVocab.includes(vocabs[rdm])){
-                rdmVocab.push(vocabs[rdm])
+    $.getJSON("data/MiddleSchool.json", function(result){
+        allQuestion = result[room.category]; // อ่านคำศัพท์ทั้งหมดจากไฟล์ JSON และเก็บไว้ในตัวแปร allQuestion
+        // const vocabs = result[room.category]
+        while (rdmQuestion.length != 11){
+            let rdm = Math.floor((Math.random() * (allQuestion.length - 1)));
+                if (!rdmQuestion.includes(allQuestion[rdm])){
+                    rdmQuestion.push(allQuestion[rdm])
             }
         }
-        if (rdmVocab) {
+        if (rdmQuestion) {
             refRooms.child(room.uid).child("tables").update({
-                "row-1-col-1": rdmVocab[0],
-                "row-1-col-2": rdmVocab[1],
-                "row-1-col-3": rdmVocab[2],
-                "row-2-col-1": rdmVocab[3],
-                "row-2-col-2": rdmVocab[4],
-                "row-2-col-3": rdmVocab[5],
-                "row-3-col-1": rdmVocab[6],
-                "row-3-col-2": rdmVocab[7],
-                "row-3-col-3": rdmVocab[8]
+                "row-1-col-1": rdmQuestion[0],
+                "row-1-col-2": rdmQuestion[1],
+                "row-1-col-3": rdmQuestion[2],
+                "row-2-col-1": rdmQuestion[3],
+                "row-2-col-2": rdmQuestion[4],
+                "row-2-col-3": rdmQuestion[5],
+                "row-3-col-1": rdmQuestion[6],
+                "row-3-col-2": rdmQuestion[7],
+                "row-3-col-3": rdmQuestion[8],
+                "replace-btn": rdmQuestion[9],
+                "swap-btn": rdmQuestion[10]
             })
         }
+        const filteredQuestion = allQuestion.filter(function(question) {
+            return !rdmQuestion.includes(question);
+          });
+          refRooms.child(room.uid).child("questions-left").set(filteredQuestion);
     });
     }
-    // if(category2 == "M6"){
-    //     $.getJSON("data/vocabulary.json", function(result){
-    //         const vocabs = result[room.category]
-    //         while (rdmVocab.length != 9){
-    //             let rdm = Math.floor((Math.random() * (vocabs.length - 1)));
-    //             if (!rdmVocab.includes(vocabs[rdm]) && parseInt(vocabs[rdm].level) <= minLevel+1){
-    //                 rdmVocab.push(vocabs[rdm])
-    //             }
-    //         }
-    //         if (rdmVocab) {
-    //             refRooms.child(room.uid).child("tables").update({
-    //                 "row-1-col-1": rdmVocab[0],
-    //                 "row-1-col-2": rdmVocab[1],
-    //                 "row-1-col-3": rdmVocab[2],
-    //                 "row-2-col-1": rdmVocab[3],
-    //                 "row-2-col-2": rdmVocab[4],
-    //                 "row-2-col-3": rdmVocab[5],
-    //                 "row-3-col-1": rdmVocab[6],
-    //                 "row-3-col-2": rdmVocab[7],
-    //                 "row-3-col-3": rdmVocab[8]
-    //             })
-    //         }
-    //     });
-    //     }
-}
-
-$("#btnLead").click(toggleLeaderboard)
-$("#btncloseLead").click(toggleLeaderboard)
-
-function toggleLeaderboard(){
-    $("#leaderboard-box").toggle()
+    else if(category2 == "M6"){
+        $.getJSON("data/HighSchool.json", function(result){
+            allQuestion = result[room.category]; // อ่านข้อสอบทั้งหมดจากไฟล์ JSON และเก็บไว้ในตัวแปร allQuestion
+            while (rdmQuestion.length != 11){
+                let rdm = Math.floor((Math.random() * (allQuestion.length - 1)));
+                    if (!rdmQuestion.includes(allQuestion[rdm])){
+                        rdmQuestion.push(allQuestion[rdm])
+                }
+            }
+            if (rdmQuestion) {
+                refRooms.child(room.uid).child("tables").update({
+                    "row-1-col-1": rdmQuestion[0],
+                    "row-1-col-2": rdmQuestion[1],
+                    "row-1-col-3": rdmQuestion[2],
+                    "row-2-col-1": rdmQuestion[3],
+                    "row-2-col-2": rdmQuestion[4],
+                    "row-2-col-3": rdmQuestion[5],
+                    "row-3-col-1": rdmQuestion[6],
+                    "row-3-col-2": rdmQuestion[7],
+                    "row-3-col-3": rdmQuestion[8],
+                    "replace-btn": rdmQuestion[9],
+                    "swap-btn": rdmQuestion[10]
+                })
+            }
+            const filteredQuestion = allQuestion.filter(function(question) {
+                return !rdmQuestion.includes(question);
+              });
+              refRooms.child(room.uid).child("questions-left").set(filteredQuestion);
+        });
+        }
+    
 }
