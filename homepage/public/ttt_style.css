@@ -1,6 +1,6 @@
 html,body{
     height: calc(100% - 1px);
-    font-family: 'Concert One', cursive, 'Kanit';
+    font-family: 'Concert One', cursive;
     background-image: url("/pic/bg.png");
   }
  
@@ -14,6 +14,14 @@ html,body{
     line-height: 50px;
     border: solid 3px rgb(255, 255, 255);
     text-align: center;
+    
+  }
+  .table-block:hover{
+
+    background-color: rgb(255, 180, 193);
+   
+   cursor: pointer;
+    
   }
   .board{
 
@@ -72,65 +80,12 @@ html,body{
   cursor: pointer;
 
   }
-  /* .specialfx:disabled {
-    pointer-events: none;
-  background-color: grey;
-  cursor: default;
-} */
   .fxRow{
     justify-content: end;
     margin-right: 2%;
 
   }
-  .modal-dialog {
-    max-width: 50%;
-  }
-  #questionModal-time{
-    color: rgb(143, 17, 88);
-  }
-  #messageModal{
-    color: rgb(143, 17, 88);
-    font-size:small;
-  }
-  #questionModalLabel {
-    color: rgb(143, 17, 88);
-  }
-  .modal-body h2{
-    font-size: 170%;
-    color: rgb(143, 17, 88);
 
-  }
-  #choice-con {
-    display: flex;
-    flex-direction: column;
-  }
-  .choice, .choice-replace, .choice-swap {
-    flex: 1;
-    background-color: rgba(247,172,185,255);
-    border: none;
-    color:rgba(54, 18, 24, 0.633);
-  }
-  
-  .choice-swap:hover, .choice-replace:hover, .choice:hover {
-    color: rgb(143, 17, 88);
-    background-color: rgba(244, 135, 153, 0.344);
-  }
-  .disabled {
-    background-color: rgb(230, 229, 229);
-    cursor: not-allowed;
-  }
-  .modal-body{
-    background-color: rgba(244, 135, 153, 0.443);
-    border: none;
-  }
-  .modal-content{
-    border: none;
-  }
-  .modal-header{
-    border: none;
-    background-color: rgba(247,172,185,255);
-  }
-  
   @media screen and (max-width: 750px) {
     .user-block{
 
@@ -173,6 +128,13 @@ html,body{
     .fxRow{
       justify-content: center;
       margin-right: 0%;
+    }
+    .table-block:hover{
+
+      background-color: rgb(255, 180, 193);
+     
+     cursor: pointer;
+      
     }
   }
 
@@ -218,5 +180,12 @@ html,body{
     .fxRow{
       justify-content: center;
       margin-right: 0%;
+    }
+    .table-block:hover{
+
+      background-color: rgb(255, 180, 193);
+     
+     cursor: pointer;
+      
     }
   }
