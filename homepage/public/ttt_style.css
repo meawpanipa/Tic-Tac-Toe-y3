@@ -82,13 +82,9 @@ html,body{
     margin-right: 2%;
 
   }
-  /* .modal-dialog{
-    width: 800px;
+  .modal-dialog {
+    max-width: 50%;
   }
-  .modal-content{
-    width: 200%;
-    height: 100%;
-  } */
   #questionModal-time{
     color: rgb(143, 17, 88);
   }
