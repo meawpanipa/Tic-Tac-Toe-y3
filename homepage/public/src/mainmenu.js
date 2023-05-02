@@ -16,7 +16,7 @@ let readList = () => {
     snapshot.forEach((data) => {
       var id = c_user;
       ref.once("value").then((snapshot) => {
-        let username = snapshot.child(id).child("username").val();
+        let username = snapshot.child(id).child("name").val();
         let winNum = snapshot.child(id).child("winRound").val();
         let answerNum = snapshot.child(id).child("answer").val();
         let correctNum = snapshot.child(id).child("correctNum").val();
@@ -69,6 +69,43 @@ let readList = () => {
 };
 
 window.onload = readList;
+
+// modal section
+const modal = document.querySelector("#modal-choose");
+const overlay = document.querySelector("#overlay-choose");
+const btnStart = document.querySelector("#btn-start")
+// const closeModalBtn = document.querySelector(".btn-close");
+
+// close modal function
+const closeModal = function () {
+  modal.classList.add("hidden-2");
+  overlay.classList.add("hidden-2");
+};
+
+//เคลียร์ form ยังไม่ได้
+const btnClose = document.getElementById("btn-close");
+// btnClose.addEventListener("click", () => {
+//   const form1 = document.getElementById("inputCategory");
+//   const form2 = document.getElementById("inputCategory2");
+//   form1.reset();
+//   form2.reset();
+// });
+
+// close the modal when the close button and overlay is clicked
+// closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// open modal function
+const openModalMatch = function () {
+  modal.classList.remove("hidden-2");
+  overlay.classList.remove("hidden-2");
+  document.getElementById("modal-title").innerHTML = "Select Subject and difficulty";
+};
+
+// open modal event
+btnStart.addEventListener("click", openModalMatch);
+
+
 
 // const element = document.getElementById("searchBtn");
 // element.addEventListener("click", function () {
