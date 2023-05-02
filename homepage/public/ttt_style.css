@@ -1,7 +1,7 @@
 html,body{
     height: calc(100% - 1px);
     font-family: 'Concert One', cursive, 'Kanit';
-    background-image: url("/homepage/pic/bg.png");
+    background-image: url("/pic/bg.png");
   }
  
   
