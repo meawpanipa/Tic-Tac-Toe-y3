@@ -273,7 +273,6 @@ btnReplace.addEventListener("click", () => {
             return;
           }
         const tableBlock = event.target.parentElement.parentElement.closest(".table-block");
-        
         console.log("click");
         console.log(event.target.src);
         // const pic = event.target.src
@@ -410,6 +409,7 @@ btnReplace.addEventListener("click", () => {
 
 
 const btnSwap = document.getElementById("btn-swap");
+const tableblockcolor = document.getElementsByClassName("table-block");
 let isBtnSwapDisabled = false;
 let selectedO = 0;
 let selectedX = 0;
@@ -427,7 +427,7 @@ btnSwap.addEventListener("click", () => {
         return
     }
     if(isBtnSwapDisabled === false){
-    showDialog("เลือกช่องของคุณและข่องของฝั่งตรงข้ามที่ต้องการสลับที่")
+    showDialog("เลือกช่องของคุณและช่องของฝั่งตรงข้ามที่ต้องการสลับที่")
     }
     // if (selectedO < 1 || selectedX < 1) {
     //     showDialog("Please select both O and X images first!")
@@ -451,6 +451,7 @@ btnSwap.addEventListener("click", () => {
             }
             console.log("click O")
             selectedO = tableBlock.id;
+
         } 
         if (pic.endsWith("X.png")) {
             if (selectedX !== null) {
@@ -503,7 +504,7 @@ btnSwap.addEventListener("click", () => {
                     showDialog(`คำตอบที่ถูกคือ:<br>${correctAnswer}`)
                     // $("#questionModal").val("")
                     $("#swapModal").modal("hide")
-    
+                    
                     //ลบคำถามในช่องนั้นออกแล้วแทนที่ด้วยคำถามใหม่
                     updateQuestion(roomInfo, "swap-btn")
                 }
@@ -511,10 +512,11 @@ btnSwap.addEventListener("click", () => {
             isBtnSwapDisabled = true;
             btnSwap.classList.add("disabled");  
             specialfx.classList.add("disabled");
+           
         }
     });
 });
-
+// tableblockcolor.style.backgroundColor = "red";
     })
 
 
@@ -652,6 +654,7 @@ function finishGame(){
                 let addExp = 50;
                 if (roomInfo.winner == "draw"){
                     $("#whoWin").html("Draw")
+                    $("#desGameOver").html("")
                     addExp = 0
                 }
                 else if (roomInfo.winner == "stop"){
