@@ -125,6 +125,7 @@ html,body{
     cursor: not-allowed;
   }
   .modal-body{
+    color: rgb(143, 17, 88);
     background-color: rgba(244, 135, 153, 0.443);
     border: none;
   }
@@ -132,8 +133,24 @@ html,body{
     border: none;
   }
   .modal-header{
+    color: rgb(143, 17, 88);
     border: none;
     background-color: rgba(247,172,185,255);
+  }
+  .modal-footer{
+    background-color: rgba(244, 135, 153, 0.443);
+    border: none;
+  }
+  #btn-exit{
+    color: rgb(143, 17, 88);
+    background-color: rgba(247,172,185,255);
+    border: none;
+  }
+  #btn-exit:hover{
+    color: rgb(143, 17, 88);
+    background-color: rgb(245, 122, 140);
+    /* color: white; */
+    border-color: rgb(255, 148, 166);
   }
   .table-block:hover{
     background-color: rgb(255, 180, 193);
@@ -163,10 +180,7 @@ html,body{
       cursor: pointer;
     }
 
-    .table-block:hover{
-      background-color: rgb(255, 180, 193);
-      cursor: pointer;
-    }
+   
     .timer{
       color: rgb(143, 17, 88);
       font-weight: bold;
@@ -192,13 +206,11 @@ html,body{
     }
   }
    .table-block:hover{
-
       background-color: rgb(255, 180, 193);
-     
      cursor: pointer;
-      
     }
-
+      
+    
   
   @media screen and (max-width: 515px) {
     .user-block{
@@ -215,7 +227,10 @@ html,body{
       width: 95%;
       height: 80%
     }
-
+    .table-block:hover{
+      background-color: rgb(255, 180, 193);
+      cursor: pointer;
+    }
     .timer{
 
       border-radius:5px ;
