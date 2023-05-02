@@ -569,7 +569,7 @@ function checkWinner(room){
                     refUsers.child(idLose).once("value", (data) => {
                         user = data.val()
                         refUsers.child(idLose).update({
-                            lose: parseInt(user.lose) + 1,
+                            // lose: parseInt(user.lose) + 1,
                             round: parseInt(user.round) + 1
                         })
                         
@@ -657,7 +657,7 @@ function finishGame(){
                     addExp = 100
                     // console.log(userProfile.name);
                     $("#whoWin").html("You Win !")
-                    $("#desGameOver").html("+100 score" + userProfile.name)
+                    $("#desGameOver").html("+100 score " + userProfile.name)
                 }
                 else {
                     $("#whoWin").html("You Lose !")
