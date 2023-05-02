@@ -9,7 +9,7 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const refUsers = firebase.database().ref("UserList")
+const refUsers = firebase.database().ref("users")
 
 $("#btnLogout").click(logout)
 $("#btnLogout-mobile").click(logout)
