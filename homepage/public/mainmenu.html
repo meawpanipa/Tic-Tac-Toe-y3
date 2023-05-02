@@ -27,7 +27,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,7 +131,7 @@
         body,
         #message {
           margin-top: 0;
-          background-image: url("/pic/bg.png");
+          background-image: url("/homepage/pic/bg.png");
           box-shadow: none;
         }
         .header {
@@ -315,9 +316,7 @@
               Leaderboard
             </a>
             <a
-              href=".html"
-              class="d-flex justify-content-center align-items-center profile p-4 col-12 mt-2 menubtn sBlock fs-1 "
-            
+              class="d-flex justify-content-center align-items-center profile p-4 col-12 mt-2 menubtn sBlock fs-1 " id="btn-start"
             >
               Start
             </a>
@@ -347,7 +346,41 @@
         </div>
       </div>
     </div>
+<!-------------      modal -------------------------------->
 
+        <section class="modal hidden" id="modal-choose">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Select Subject and difficulty</h5><br>
+              </div>
+              <div class="modal-body">
+                  <h5>subject</h5>
+                  <select class="form-select" id="inputCategory">
+                      <option selected disabled>Choose a subject</option>
+                      <option value="English">English</option>
+                      <option value="Thai">Thai</option>
+                      <option value="Social">Social</option>
+                  </select>
+                  <h5>difficulty</h5>
+                  <select class="form-select" id="inputCategory2">
+                      <option selected disabled>Choose a difficulty</option>
+                      <option value="M3">M3</option>
+                      <option value="M6">M6</option>
+                  </select>
+                  <div class="modal-text text-center mt-5 join-finding">Waiting for Player</div>
+                  <div class="footer-modal p-4 d-flex align-items-center justify-content-center">
+                      <button type="button" class="btn btn-primary join-default" id="btn-find">Find</button>
+                      <button type="button" class="btn btn-secondary join-default" onclick="closeModal(this)" id="btn-close">Close</button>
+                      <button type="button" class="btn btn-secondary join-finding" id="btn-cancel-join">Cancel</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+          <div class="overlay hidden" id="overlay-choose"></div>
+        </section>
+
+       
     <script>
       function logOut() {
         window.location.assign("index.html");
@@ -355,8 +388,10 @@
       }
     </script>
 
-    <script src="src/config.js"></script>
+    <!-- <script src="src/config.js"></script> -->
     <script src="src/mainmenu.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="./src/matching.js"></script>
     <!-- <script src="src/search.js"></script>
     <script src="src/sidebar.js"></script> -->
   </body>
