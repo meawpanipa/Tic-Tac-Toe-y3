@@ -48,12 +48,12 @@ function setUpGame(room){
                   const oUser = snapshots[1].val();
               
                   if (currentUser && room[`user-x-id`] === currentUser.uid) {
-                        $(`.game-user-name2`).html(xUser.name);
-                        $(`.game-user-name`).html(oUser.name);
+                        $(`.game-user-name2`).html(`X : ${xUser.name}`);
+                        $(`.game-user-name`).html(`O : ${oUser.name}`);
                     }
                 if (currentUser && room[`user-o-id`] === currentUser.uid){
-                    $(`.game-user-name2`).html(oUser.name);
-                    $(`.game-user-name`).html(xUser.name);
+                    $(`.game-user-name2`).html(`O : ${oUser.name}`);
+                    $(`.game-user-name`).html(`X :${xUser.name}`);
                     
                   }
                 })
@@ -239,8 +239,10 @@ $(".choice").click(function() {
             }
         });
 
-
 const btnReplace = document.getElementById("btn-replace");
+const specialfx = document.getElementsByClassName(".specialfx");
+// const disabled = document.getElementsByClassName(".disabled");
+
 const imgElements = document.querySelectorAll(".table-block img");
 let isBtnReplaceDisabled = false; 
 btnReplace.addEventListener("click", () => {
@@ -331,7 +333,9 @@ btnReplace.addEventListener("click", () => {
                 });
                
                 isBtnReplaceDisabled = true;
-                btnReplace.classList.add("disabled");            
+                btnReplace.classList.add("disabled"); 
+                specialfx.classList.add("disabled");
+
             }
             else{
                 showDialog("โปรดเลือกสัญลักษณ์ของฝั่งตรงข้าม")
@@ -387,7 +391,9 @@ btnReplace.addEventListener("click", () => {
                 });
                
                 isBtnReplaceDisabled = true;
-                btnReplace.classList.add("disabled");                
+                btnReplace.classList.add("disabled");     
+                specialfx.classList.add("disabled");
+
             }
             else{
                 showDialog("โปรดเลือกสัญลักษณ์ของฝั่งตรงข้าม")
@@ -505,6 +511,7 @@ btnSwap.addEventListener("click", () => {
             });
             isBtnSwapDisabled = true;
             btnSwap.classList.add("disabled");  
+            specialfx.classList.add("disabled");
         }
     });
 });
