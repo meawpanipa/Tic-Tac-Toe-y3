@@ -14,18 +14,27 @@
 </head>
 <style>
   body  {
-  background-image: url("/pic/bg.png");
+  background-image: url("/public/pic/bg.png");
   background-color: #cccccc;
   
 }
+.logo{
+  width: 40%;
+}
+
+@media screen and (max-width: 990px) {
+  .logo{
+  width: 80%;
+}
+  }
 </style>
 <body >
-  <section class="vh-100" >
+  <section class="" >
     <div class="container py-5 h-100 ">
       
-      <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="row d-flex justify-content-center align-items-center h-75">
         <div class="d-flex justify-content-center mb-3 pb-1" >
-          <img src="/pic/logo5.png"style="width: 50%;" alt="">
+          <img src="/public/pic/logo5.png" class="logo" alt="">
         </div>
         <div class="col col-xl-6">
           <div class="card" style="border-radius: 1rem;">
@@ -55,7 +64,7 @@
 
                     
   
-                    <p class="mb-5 pb-lg-2">Don't have an account? <a href="signup.html">Create new account</a></p>
+                    <p class="">Don't have an account? <a href="signup.html">Create new account</a></p>
                     
                   </form>
   
